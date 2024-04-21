@@ -1,7 +1,19 @@
 #calories calculator
 
+g_rice = float(input("rice here : "))
 g_egg = float(input("egg here : "))
 g_carrot = float(input("carrot here : "))
+
+def ricecal(x):
+
+  energy = x * 1.3
+  protein = x * 0.027
+  carbohydrate = x * 0.282
+  fat = x * 0.003
+
+  return energy, protein, carbohydrate, fat
+
+enrice, prorice, carborice, frice = ricecal(g_rice)
 
 def eggcal(x):
   
@@ -23,12 +35,12 @@ def carrotcal(x):
 
   return energy, protein, carbohydrate, fat
 
-energyc, proteinc, carbohydratec, fatc = carrotcal(g_carrot)
+encarrot, procarrot, carbocarrot, fcarrot = carrotcal(g_carrot)
 
-sum_energy = energyc + enegg
-sum_protein = proteinc + proegg
-sum_carbo = carbohydratec + carboegg
-sum_fat = fatc + fegg
+sum_energy = enrice + enegg + encarrot
+sum_protein = prorice + proegg + procarrot
+sum_carbo = carborice + carboegg + carbocarrot
+sum_fat = frice + fegg + fcarrot
 
 print("\nenergy :", sum_energy)
 print("protein :", sum_protein)
